@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-2"><img src="assets/loderbg.png" >devLog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon  bg-secondary"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 invisible">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <button class="btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"><img src="assets/loderbg.png">devLog</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="temizle()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <form #loginForm="ngForm" (submit)="save(loginForm.value)" id="loginform">
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control form-control-lg" #email="ngModel" ngModel />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password" name="passwd" class="form-control form-control-lg" #passwd="ngModel"
+                      ngModel />
+                    
+                  </div>
+                  <div class="pt-1 mb-4" >
+                    <button class="btn  btn-md btn-block" id="modalbtn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
