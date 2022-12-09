@@ -2030,3 +2030,7 @@ hr {
 .footer-area .footer-bottom .footer-copy-right p a {
     color: #f15f22
 }
+
+#tracktrace{
+    cursor: pointer;
+}

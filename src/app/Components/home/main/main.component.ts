@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   constructor() { }
-
+  data:any ="Takip Numarası Hatalı"
   ngOnInit(): void {
   }
 
