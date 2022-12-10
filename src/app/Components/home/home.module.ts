@@ -12,11 +12,11 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     NavbarComponent,
-    MainComponent
+    MainComponent,
   ]
 })
 export class HomeModule { }

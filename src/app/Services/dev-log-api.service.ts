@@ -12,7 +12,7 @@ export class DevLogApiService {
     return `${this.baseUrl}/${request.endpoint}`;
   }
 
-  get<T>(request: Partial<RequestParameters>, id?: string):Observable<T> {
+  get<T>(request: Partial<RequestParameters>, id?: string):Observable<T|any> {
     //Yapılan istek türünde değer döneceği bildirilir. partial olarak bildirilmeyen nesneler oluşturulup verilmelidir, 
     //partial ifadesi ile nesne anlık olarak oluşturulabilir.
     let url: string = "";
@@ -25,7 +25,7 @@ export class DevLogApiService {
     return this._Http.get<T>(url,{headers : request.headers})
   }
 
-  post<T>(request: Partial<RequestParameters>,body:Partial<T>):Observable<T>{
+  post<T>(request: Partial<RequestParameters>,body:Partial<T|any>):Observable<T>{
     let url:string ="";
     if (request.externalUrl) {
       url = request.externalUrl;
@@ -36,7 +36,7 @@ export class DevLogApiService {
     return this._Http.post<T>(url,body,{headers:request.headers})
   }
 
-  put<T>(request: Partial<RequestParameters>,body:Partial<T>):Observable<T>{
+  put<T>(request: Partial<RequestParameters>,body:Partial<T>):Observable<T|any>{
     let url:string ="";
     if (request.externalUrl) {
       url = request.externalUrl;
@@ -47,7 +47,7 @@ export class DevLogApiService {
     return this._Http.put<T>(url,body,{headers:request.headers})
   }
 
-  delete<T>(request: Partial<RequestParameters>,id:string):Observable<T>{
+  delete<T>(request: Partial<RequestParameters>,id:string):Observable<T|any>{
     let url:string ="";
     if (request.externalUrl) {
       url = request.externalUrl;
