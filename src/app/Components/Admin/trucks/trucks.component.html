@@ -1,0 +1,89 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="container mt-2">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="form">
+                        <input type="text" class="form-control form-input bg-dark text-white"
+                            placeholder="Search anything..." name="Plaka" #Plaka="ngModel" ngModel>
+                        <span class="left-pan" (click)="ara(Plaka.value)"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <table class="table table-white table-hover overflow-auto" id="truckList">
+            <thead>
+                <tr>
+                    <th>Marka</th>
+                    <th>Seri</th>
+                    <th>Model</th>
+                    <th>Plaka</th>
+                    <th>Beygir Gucu</th>
+                    <th>U. Tarihi</th>
+                    <th>Vites</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of tirlar">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src={{item.temsilResim}} alt="" style="width: 45px; height: 45px"
+                                class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{item.marka}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.seri}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.model}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.plaka}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.beygirGucu}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.uretimYili}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.vitesTuru == true ? "Otomatik":"Manuel"}}</p>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Truckdetail">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal-dialog modal-lg fade modal" id="Truckdetail" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, magnam ipsa amet consequuntur, ipsam
+                possimus reiciendis hic corrupti nam, accusamus magni minus. Incidunt corporis praesentium facilis non
+                eveniet fuga nulla?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

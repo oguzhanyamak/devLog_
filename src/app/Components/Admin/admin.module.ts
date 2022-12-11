@@ -4,6 +4,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeModule } from '../home/home.module';
 import { AdminlayoutComponent } from './adminlayout/adminlayout.component';
 import { RouterModule } from '@angular/router';
+import { TrucksComponent } from './trucks/trucks.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -11,11 +14,13 @@ import { RouterModule } from '@angular/router';
   declarations: [
     DashboardComponent,
     AdminlayoutComponent,
+    TrucksComponent,
   ],
   imports: [
     CommonModule,
     HomeModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports:[
     AdminlayoutComponent,
