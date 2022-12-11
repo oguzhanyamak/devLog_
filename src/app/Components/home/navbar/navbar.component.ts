@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { login, loginresponse } from 'src/app/Interfaces/loginInterface';
 import { AlertService, CMessageType, CPosition } from 'src/app/Services/alert.service';
 import { DevLogApiService } from 'src/app/Services/dev-log-api.service';
@@ -10,7 +11,7 @@ import { DevLogApiService } from 'src/app/Services/dev-log-api.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private service:DevLogApiService,private alert:AlertService) { }
+  constructor(private service:DevLogApiService,private alert:AlertService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +36,7 @@ export class NavbarComponent implements OnInit {
         else{
           window.localStorage.setItem("token",data.token);
           this.alert.message("Giriş Başarılı","Başarılı",CMessageType.Success,CPosition.TopRight);
+          this.router.navigate(['Admin'])
         }
         console.log(data);
       }, error: (error) => console.log(error), complete: () => console.info("Complete")

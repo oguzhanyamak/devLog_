@@ -7,6 +7,7 @@ import { HomeModule } from './Components/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminModule } from './Components/Admin/admin.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     AppRoutingModule,
     HomeModule,
+    AdminModule,
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),

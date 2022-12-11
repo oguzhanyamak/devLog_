@@ -10,6 +10,12 @@ export class MainComponent implements OnInit {
   constructor() { }
   data:any ="Takip Numarası Hatalı"
   ngOnInit(): void {
+    this.change();
   }
 
+  element:any;
+  change() {
+    this.element = document.getElementById("logbtn");
+    this.element.classList.remove("invisible");
+  }
 }
