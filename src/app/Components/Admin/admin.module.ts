@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { TrucksComponent } from './trucks/trucks.component';
 import { FormsModule } from '@angular/forms';
 import { TrucksDetailComponent } from './trucks-detail/trucks-detail.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { TrucksDetailComponent } from './trucks-detail/trucks-detail.component';
     HomeModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     AdminlayoutComponent,

@@ -68,3 +68,84 @@
         </table>
     </div>
 </div>
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample">
+    Button with data-bs-target
+</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+    data-bs-backdrop="static">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-center" id="offcanvasExampleLabel">Araç Ekle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form #truckAdd="ngForm" (ngSubmit)="saveTruck(truckAdd.value,truckAdd)">
+            <div class="row mx-2 my-3">
+                <div class="col-4">Marka</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" (change)="onSelect($event)"
+                        name="marka" ngModel>
+                        <option selected></option>
+                        <option *ngFor="let marka of Marka" value="{{marka.id}}">{{marka.Name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Seri</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" (change)="onSelected($event)"
+                        name="seri" ngModel>
+                        <option *ngFor="let seri of Seri" value="{{seri.sid}}">{{seri.Name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Model</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" name="model" ngModel>
+                        <option *ngFor="let model of Model" value="{{model.Name}}">{{model.Name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Plaka</div>
+                <div class="col-8"><input type="text" class="form-control" name="plaka" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">KM</div>
+                <div class="col-8"><input type="number" class="form-control" name="km" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Uretim Yılı</div>
+                <div class="col-8"><input type="number" class="form-control" name="uretimYili" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Beygir Gücü</div>
+                <div class="col-8"><input type="text" class="form-control" name="beygirGucu" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Vites Türü</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" name="vitesTuru" ngModel>
+                        <option value="1">Otomatik</option>
+                        <option value="0">Manuel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Yakıt</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" name="yakıtTuru" ngModel>
+                        <option value="0">Benzin</option>
+                        <option value="1">Dizel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                    <button class="btn btn-success">Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>
