@@ -13,10 +13,11 @@
               <!--Hero form -->
               <form action="#" class="search-box">
                 <div class="input-form">
-                  <input type="text" placeholder="Your Tracking ID">
+                  <input type="text" placeholder="Your Tracking ID" name="TakipNo" #TakipNo="ngModel" ngModel>
                 </div>
                 <div class="search-form">
-                  <a id="tracktrace"data-bs-toggle="modal" data-bs-target="#exampleModale">Track & Trace</a>
+                  <a id="tracktrace" data-bs-toggle="modal" data-bs-target="#exampleModale"
+                    (click)="takipGetir(TakipNo.value)">Track & Trace</a>
                 </div>
               </form>
               <!-- Hero Pera -->
@@ -109,7 +110,8 @@
   <!-- Footer End-->
 </footer>
 
-<div class="modal fade" id="exampleModale" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModale" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -117,7 +119,42 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        {{data}}
+        <div class="row" *ngIf="data.data!= null">
+          <div class="row">
+            <div class="progress" style="height: 1px;">
+              <div class="progress-bar" role="progressbar" aria-label="Example 1px high" [style.width]="load"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-start">Hazırlanıyor</div>
+            <div class="col text-center">Yolda</div>
+            <div class="col text-end">Teslim Edildi</div>
+          </div>
+          <div class="row mt-3 ms-3">
+            <div class="col">
+              <div class="row">Nereden</div>
+              <div class="row">{{data.data.nereden}}</div>
+            </div>
+            <div class="col">
+              <div class="row">
+                Nereye
+              </div>
+              <div class="row"> {{data.data.nereye}}</div>
+            </div>
+            <div class="col">
+              <div class="row">Mesafe</div>
+              <div class="row">{{data.data.mesafe}} KM</div>
+            </div>
+            <div class="col">
+              <div class="row">Tarih</div>
+              <div class="row">{{data.data.olusturulmaTarihi | date:'shortDate'}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="data.data === null">
+          <div class="col text-center">Hatalı Takip Numarası</div>
+        </div>
       </div>
     </div>
   </div>

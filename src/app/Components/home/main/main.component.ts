@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DevLogApiService } from 'src/app/Services/dev-log-api.service';
 
 @Component({
   selector: 'app-main',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiservice:DevLogApiService) { }
   data:any ="Takip Numarası Hatalı"
+  load:any;
   ngOnInit(): void {
     this.change();
   }
@@ -17,5 +19,25 @@ export class MainComponent implements OnInit {
   change() {
     this.element = document.getElementById("logbtn");
     this.element.classList.remove("invisible");
+  }
+
+  takipGetir(data:string){
+    this.apiservice.get({endpoint:"Jobs"},data).subscribe({
+      next: (data) => {
+        this.data = data;
+        if(data.durum == true){
+          this.load = "25%"
+        }
+        else{
+          this.load="100%"
+        }
+        console.log(this.data);
+      }, error: (error) => console.log(error), complete: () => {console.info("Complete"),this.temizle()}
+    })
+  }
+
+  temizle(){
+    this.element = document.querySelector('[name="TakipNo"]');
+    this.element.value="";
   }
 }
