@@ -1,5 +1,6 @@
 + Bootstrap 5
 + ngx-Toastr 15.2.2
++ ngx-Spinner 14
 ---
 # DevLog
 

@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-.form{
-
+#form{
     position: relative;
     color: white;
 }
@@ -15,7 +14,7 @@
     transition: all 1s;
 }
 
-.form span{
+#form span{
 
     position: absolute;
     right: 17px;
@@ -43,5 +42,9 @@
 .form-input:focus{
     box-shadow: none;
     border:none;
+}
+
+hr{
+    border-top: 5px solid rgb(0, 0, 0);
 }
 

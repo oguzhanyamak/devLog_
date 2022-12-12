@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="main-body">
+
+        <div class="row gutters-sm">
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src={{tir.temsilResim}} alt="Admin" width="150">
+                            <div class="mt-3">
+                                <h4>{{tir.marka}}</h4>
+                                <p class="text-secondary mb-1">{{tir.seri}}</p>
+                                <p class="text-muted font-size-sm">{{tir.model}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">KM</h6>
+                            <span class="text-secondary">{{tir.km}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Üretim Yılı</h6>
+                            <span class="text-secondary">{{tir.uretimYili}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Vites Türü</h6>
+                            <span class="text-secondary">{{tir.vitesTuru == true ? "Otomatik":"Manuel"}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Yakıt</h6>
+                            <span class="text-secondary">{{tir.yakitTuru == true ? "Dizel":"Benzin"}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Giriş Tarihi</h6>
+                            <span class="text-secondary">{{tir.olusturulmaTarihi | date:'shortDate'}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row ms-2 mt-2">
+                    <h4>Yük Bilgileri</h4>
+                    <table class="table table-hover ms-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nereden</th>
+                                <th scope="col">Nereye</th>
+                                <th scope="col">Ağırlık</th>
+                                <th scope="col">Mesafe</th>
+                                <th scope="col">Aciklama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tir.yukler;index as i">
+                                <th scope="row">{{item.nereden}}</th>
+                                <td>{{item.nereye}}</td>
+                                <td>{{item.agirlik}} Ton</td>
+                                <td>{{item.mesafe}} KM</td>
+                                <td>{{item.yukDetayAciklama}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row ms-2 mt-5">
+                    <h4>Bakım Bilgileri</h4>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">KM Bilgisi</th>
+                                <th scope="col">Tarih</th>
+                                <th scope="col">Açıklana</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tir.bakimBilgileri">
+                                <th scope="row">{{item.guncelKMBilgisi}}</th>
+                                <td>{{item.olusturulmaTarihi | date:'shortDate'}}</td>
+                                <td>{{item.bakimAciklamasi}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

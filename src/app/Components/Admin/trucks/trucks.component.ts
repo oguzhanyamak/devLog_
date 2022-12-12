@@ -8,36 +8,26 @@ import { DevLogApiService } from 'src/app/Services/dev-log-api.service';
 })
 export class TrucksComponent implements OnInit {
 
-  table:any;
-  loader:any;
-  constructor(private apiservice:DevLogApiService) { 
+  table: any;
+  loader: any;
+  constructor(private apiservice: DevLogApiService) {
   }
 
-  tirlar:any;
+  tirlar: any;
+  trucks:any;
+  tir:any = {};
 
   ngOnInit(): void {
     this.getTirlar();
   }
 
-  getTirlar(){
-    this.tirlar = this.apiservice.get({endpoint: "Trucks"}).subscribe({
-      next: (data) => {
-        this.tirlar = data;
-        console.log(this.tirlar);
-      }, error: (error) => console.log(error), complete: () => 
-      {
-        console.info("Complete");
-      }
+  getTirlar() {
+    this.tirlar = this.apiservice.get({ endpoint: "Trucks" }).subscribe({
+      next: (data) => {this.trucks = data;console.log(this.trucks)},
+      error: (error) => console.log(error),
+      complete: () => {console.info("Complete"),this.tirlar=this.trucks;}
     });
-  }
-
-  ara(Plaka:string){
-    this.apiservice.get({endpoint:"Trucks"},Plaka.toUpperCase()).subscribe({
-      next: (data) => {
-        this.tirlar = data;
-        console.log(data);
-      }, error: (error) => console.log(error), complete: () => console.info("Complete")
-    });
+    
   }
 
 

@@ -6,7 +6,7 @@ import { AdminlayoutComponent } from './adminlayout/adminlayout.component';
 import { RouterModule } from '@angular/router';
 import { TrucksComponent } from './trucks/trucks.component';
 import { FormsModule } from '@angular/forms';
-
+import { TrucksDetailComponent } from './trucks-detail/trucks-detail.component';
 
 
 
@@ -15,12 +15,13 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     AdminlayoutComponent,
     TrucksComponent,
+    TrucksDetailComponent,
   ],
   imports: [
     CommonModule,
     HomeModule,
     RouterModule,
-    FormsModule
+    FormsModule,
   ],
   exports:[
     AdminlayoutComponent,
