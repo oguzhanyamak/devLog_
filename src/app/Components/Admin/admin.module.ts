@@ -8,6 +8,9 @@ import { TrucksComponent } from './trucks/trucks.component';
 import { FormsModule } from '@angular/forms';
 import { TrucksDetailComponent } from './trucks-detail/trucks-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { JobsComponent } from './jobs/jobs.component';
+import { TrailerComponent } from './trailer/trailer.component';
+import { JobsDetailComponent } from './jobs-detail/jobs-detail.component';
 
 
 @NgModule({
@@ -16,6 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminlayoutComponent,
     TrucksComponent,
     TrucksDetailComponent,
+    JobsComponent,
+    TrailerComponent,
+    JobsDetailComponent,
   ],
   imports: [
     CommonModule,

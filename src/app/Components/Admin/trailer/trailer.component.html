@@ -1,0 +1,116 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div class="container mt-2">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="form" id="form">
+                        <input type="text" class="form-control form-input bg-dark text-white"
+                            placeholder="Search anything..." name="Plaka" #Plaka="ngModel" ngModel>
+                        <span class="left-pan" routerLink="{{Plaka.value}}"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <table class="table table-white table-hover overflow-auto" id="truckList">
+            <thead>
+                <tr>
+                    <th>Plaka</th>
+                    <th>Marka</th>
+                    <th>Uzunluk</th>
+                    <th>Tipi</th>
+                    <th>Uretim Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of dorseler">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src={{item.temsiliResim}} alt="" style="width: 45px; height: 45px" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{item.plaka}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.marka}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.uzunluk}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.turu}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.uretimTarihi}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample">
+    Button with data-bs-target
+</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+    data-bs-backdrop="static">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-center" id="offcanvasExampleLabel">Dorse Ekle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form #trailerkAdd="ngForm" (ngSubmit)="saveTrailer(trailerkAdd.value,trailerkAdd)">
+            <div class="row mx-2 my-3">
+                <div class="col-4">Marka</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" name="marka" ngModel>
+                        <option selected></option>
+                        <option value="Fesan">Fesan</option>
+                        <option value="Fruehauf">Fruehauf</option>
+                        <option value="Tırsan">Tırsan</option>
+                        <option value="Koluman">Koluman</option>
+                        <option value="Sert">Sert</option>
+                        <option value="Krone">Krone</option>
+                        <option value="Oymak">Oymak</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mx-2 my-3">
+                <div class="col-4">Plaka</div>
+                <div class="col-8"><input type="text" class="form-control" name="plaka" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Uzunluk</div>
+                <div class="col-8"><input type="text" class="form-control" name="uzunluk" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Uretim Yılı</div>
+                <div class="col-8"><input type="text" class="form-control" name="uretimTarihi" ngModel></div>
+            </div>
+            <div class="row mx-2 my-3">
+                <div class="col-4">Türü</div>
+                <div class="col-8">
+                    <select class="form-select" aria-label="Default select example" name="turu" ngModel>
+                        <option value="Damperli">Damperli</option>
+                        <option value="Lowbed">Lowbed</option>
+                        <option value="Tenteli">Tenteli</option>
+                        <option value="Frigorifik">Frigorifik</option>
+                        <option value="Tanker">Tanker</option>
+                        <option value="Tekstil">Tekstil</option>
+                        <option value="Silobas">Silobas</option>
+                        <option value="Konteyner Grubu">Konteyner Grubu</option>
+                        <option value="Özel Amaçlı">Özel Amaçlı</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-success">Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>

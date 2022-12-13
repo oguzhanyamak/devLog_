@@ -1,0 +1,157 @@
+<div class="container-fluid">
+    <div class="main-body" *ngIf="!tir">
+        <div class="row gutters-sm">
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src={{yukBilgi.data.tir.temsilResim}} alt="Admin" width="50">
+                            <div class="mt-3">
+                                <h4>{{yukBilgi.data.tir.marka}}</h4>
+                                <p class="text-secondary mb-1">{{yukBilgi.data.tir.seri}}</p>
+                                <p class="text-muted font-size-sm">{{yukBilgi.data.tir.model}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Plaka</h6>
+                            <span class="text-secondary">{{yukBilgi.data.tir.plaka}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">KM</h6>
+                            <span class="text-secondary">{{yukBilgi.data.tir.km}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Üretim Yılı</h6>
+                            <span class="text-secondary">{{yukBilgi.data.tir.uretimYili}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Vites Türü</h6>
+                            <span class="text-secondary">{{yukBilgi.data.tir.vitesTuru == true ?
+                                "Otomatik":"Manuel"}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Yakıt</h6>
+                            <span class="text-secondary">{{yukBilgi.data.tir.yakitTuru == true ?
+                                "Dizel":"Benzin"}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Giriş Tarihi</h6>
+                            <span class="text-secondary">{{yukBilgi.data.tir.olusturulmaTarihi |
+                                date:'shortDate'}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src={{yukBilgi.data.dorse.temsiliResim}} alt="Admin" width="75">
+                            <div class="mt-3">
+                                <h4>{{yukBilgi.data.dorse.marka}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Plaka</h6>
+                            <span class="text-secondary">{{yukBilgi.data.dorse.plaka}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Tür</h6>
+                            <span class="text-secondary">{{yukBilgi.data.dorse.turu}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Üretim Yılı</h6>
+                            <span class="text-secondary">{{yukBilgi.data.dorse.uretimTarihi}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Giriş Tarihi</h6>
+                            <span class="text-secondary">{{yukBilgi.data.dorse.olusturulmaTarihi |
+                                date:'shortDate'}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row ms-2 mt-2">
+                    <div class="col text-center">
+                        <h2>Yük Bilgileri</h2>
+                    </div>
+                </div>
+                <div class="row text-center my-5">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h3>Nereden</h3>
+                        </div>
+                        <div class="row my-2">
+                            <h5>{{yukBilgi.data.nereden}}</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row"><h3>Nereye</h3></div>
+                        <div class="row my-2"><h5>{{yukBilgi.data.nereye}}</h5></div>
+                    </div>
+                </div>
+                <div class="row text-center my-2">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h3>Ağırlık</h3>
+                        </div>
+                        <div class="row my-2">
+                            <h5>{{yukBilgi.data.agirlik/1000}} Ton</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row"><h3>Mesafe</h3></div>
+                        <div class="row my-2"><h5>{{yukBilgi.data.mesafe}} KM</h5></div>
+                    </div>
+                </div>
+                <div class="row text-center mt-5">
+                    <h3>{{yukBilgi.data.yukDetayAciklama}}</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <!--<img src={{yukBilgi.data.dorse.temsiliResim}} alt="Admin" width="75">-->
+                            <i class="bi bi-person"></i>
+                            <div class="mt-3">
+                                <h4>Ahmet AHMET</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Ad Soyad</h6>
+                            <span class="text-secondary">Ahmet Ahmet</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Yaş</h6>
+                            <span class="text-secondary">55</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Telefon</h6>
+                            <span class="text-secondary">555 711 66 00</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0">Giriş Tarihi</h6>
+                            <span class="text-secondary">07.02.2021</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="text-center mt-5" *ngIf="!yukBilgi">
+        Araç Bulunamadı
+    </div>
+</div>

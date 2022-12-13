@@ -12,11 +12,6 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center mt-5" *ngIf="!tirlar">
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
     <div class="row mt-5" *ngIf="tirlar">
         <table class="table table-white table-hover overflow-auto" id="truckList">
             <thead>
@@ -144,7 +139,7 @@
                 </div>
             </div>
             <div class="row">
-                    <button class="btn btn-success">Ekle</button>
+                <button class="btn btn-success">Ekle</button>
             </div>
         </form>
     </div>

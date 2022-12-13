@@ -1,0 +1,56 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div class="container mt-2">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="form" id="form">
+                        <input type="text" class="form-control form-input bg-dark text-white"
+                            placeholder="Search anything..." name="Plaka" #Plaka="ngModel" ngModel>
+                        <span class="left-pan" routerLink="{{Plaka.value}}"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <table class="table table-white table-hover overflow-auto" id="truckList">
+            <thead>
+                <tr>
+                    <th>Nereden</th>
+                    <th>Nereye</th>
+                    <th>Ağırlık /KG</th>
+                    <th>Mesaje /KM</th>
+                    <th>Tarih</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of yukler.yukler">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{item.nereden}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.nereye}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.agirlik}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.mesafe}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{item.olusturulmaTarihi | date:'shortDate'}}</p>
+                    </td>
+                    <td>
+                        <button type="button" class="btn" routerLink="{{item.id}}">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

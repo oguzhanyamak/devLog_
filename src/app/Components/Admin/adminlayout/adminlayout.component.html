@@ -1,46 +1,52 @@
 <div class="container-fluid top-0 start-0">
-    <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse position-fixed ccc">
-        <div class="position-sticky pt-3 sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item" routerLink="/Admin">
-              <a class="nav-link" aria-current="page" >
-                <i class="bi bi-clipboard-data-fill"></i>
-                Dashboard
-              </a>
-            </li>
-            <li class="nav-item" routerLink="Trucks">
-              <a class="nav-link">
-                <i class="bi bi-truck"></i>
-                Tırlar
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <i class="bi bi-people-fill"></i>
-                Çalışanlar
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <i class="bi bi-minecart-loaded"></i>
-                Yükler
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="logOut()">
-                <i class="bi bi-x-lg"></i>
-                Çıkış
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse position-fixed ccc">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item" routerLink="/Admin">
+            <a class="nav-link" aria-current="page">
+              <i class="bi bi-clipboard-data-fill"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item" routerLink="Trucks">
+            <a class="nav-link">
+              <i class="bi bi-truck"></i>
+              Tırlar
+            </a>
+          </li>
+          <li class="nav-item" routerLink="Trailer">
+            <a class="nav-link">
+              <i class="bi bi-minecart-loaded"></i>
+              Dorseler
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <i class="bi bi-people-fill"></i>
+              Çalışanlar
+            </a>
+          </li>
+          <li class="nav-item" routerLink="Jobs">
+            <a class="nav-link">
+              <i class="bi bi-cursor"></i>
+              Yükler
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logOut()">
+              <i class="bi bi-x-lg"></i>
+              Çıkış
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <router-outlet></router-outlet>
+    </main>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>

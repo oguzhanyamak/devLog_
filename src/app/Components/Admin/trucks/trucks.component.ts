@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
+import { tir } from 'src/app/Interfaces/tirInterface';
 import { DevLogApiService } from 'src/app/Services/dev-log-api.service';
 import { MsmService } from 'src/app/Services/msm.service';
 
@@ -12,7 +13,7 @@ export class TrucksComponent implements OnInit {
   constructor(private apiservice: DevLogApiService, private truck: MsmService) {
   }
 
-  tirlar: any;
+  tirlar: tir[] |any;
   Marka: any = [];
   Seri: any = [];
   Model: any = [];
@@ -39,6 +40,10 @@ export class TrucksComponent implements OnInit {
     userForm.resetForm();;
   }
 
+  onCheckboxChange(data:any){
+
+  }
+
   getTirlar() {
     this.tirlar = this.apiservice.get({ endpoint: "Trucks" }).subscribe({
       next: (data) => { this.tirlar = data },
@@ -54,6 +59,5 @@ export class TrucksComponent implements OnInit {
   onSelected(state: any) {
     this.Model = this.truck.model().filter(e => e.sid == state.target.value);
   }
-
 
 }
